@@ -19,6 +19,9 @@
     <Filter Include="Source Files\Systems">
       <UniqueIdentifier>{cfe199d7-96b2-437d-997c-31831b952dda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Library Dependencies">
+      <UniqueIdentifier>{4f0c0cef-a94b-4160-9372-f2662173a9ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VoxelWindow.h">
@@ -27,12 +30,21 @@
     <ClInclude Include="VoxelWindowSystem.h">
       <Filter>Header Files\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="VoxelGraphicsSystem.h">
+      <Filter>Header Files\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelIncludes.h">
+      <Filter>Header Files\Library Dependencies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="VoxelWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VoxelWindowSystem.cpp">
+      <Filter>Source Files\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelGraphicsSystem.cpp">
       <Filter>Source Files\Systems</Filter>
     </ClCompile>
   </ItemGroup>

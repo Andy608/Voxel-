@@ -122,10 +122,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="VoxelIncludes.h" />
+    <ClInclude Include="VoxelGraphicsSystem.h" />
     <ClInclude Include="VoxelWindow.h" />
     <ClInclude Include="VoxelWindowSystem.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="VoxelGraphicsSystem.cpp" />
     <ClCompile Include="VoxelWindow.cpp" />
     <ClCompile Include="VoxelWindowSystem.cpp" />
   </ItemGroup>

@@ -4,13 +4,15 @@
 #include <map>
 #include <string>
 #include <Trackable.h>
+#include "VoxelIncludes.h"
+#include "VoxelWindow.h"
 
 namespace voxel
 {
-	class VoxelWindow;
-
 	class VoxelWindowSystem : public Trackable
 	{
+		friend class VoxelWindow;
+
 	public:
 		static VoxelWindowSystem* getInstance();
 		static bool initInstance();
@@ -19,19 +21,24 @@ namespace voxel
 		VoxelWindowSystem(const VoxelWindowSystem& copy) = delete;
 		void operator=(const VoxelWindowSystem& copy) = delete;
 
+		//Get the display size from VoxelMonitorInfo in the future.
+		VoxelWindow* createWindow(std::string windowID, std::string windowTitle = "Hello, Voxel!", GLuint windowWidth = 960, GLuint windowHeight = 540);
+		VoxelWindow* getWindow(std::string windowID) const;
+
 	private:
 		static VoxelWindowSystem* spInstance;
-		bool mIsInitialized = false;
+		GLboolean mIsInitialized = false;
 
 		std::map<std::string, VoxelWindow*> mWindows;
 
 		VoxelWindowSystem();
 		~VoxelWindowSystem();
 
-		bool initGLFW();
+		GLboolean initWindowSystem();
+
 		void cleanup();
 		void cleanupWindows();
-
+		void cleanupWindow(std::string windowID);
 	};
 }
 
